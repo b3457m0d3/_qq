@@ -1,0 +1,62 @@
+<div class=".jumbotron"><h1>boom<small>Whamma llama</small></h1></div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="jumbotron">
+			<h2><i class="flaticon3-commercial15"></i> Garment Details</h2>
+			<hr>
+			<p class="lead"> Specify how many of each size and color to add to your quote</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<form id="garmentForm" data-total="0" class="navbar-form form-inline navbar-right">
+							<div class="row">
+								<div class="col-md-4" data-toggle="tooltip" data-placement="top" title="Color is a required field">
+									<input id="colorPicker" name="colorPicker" placeholder="Color" class="form-control"/>
+								</div>
+								<div class="col-md-1 no-padding"><div class="input-group"><input type="number" min="0" class="form-control sizes" id="xs" placeholder="XS"></div></div>
+								<div class="col-md-1 no-padding"><div class="input-group"><input type="number" min="0" class="form-control sizes" id="sm" placeholder="S"></div></div>
+								<div class="col-md-1 no-padding"><div class="input-group"><input type="number" min="0" class="form-control sizes" id="md" placeholder="M"></div></div>
+								<div class="col-md-1 no-padding"><div class="input-group"><input type="number" min="0" class="form-control sizes" id="lg" placeholder="L"></div></div>
+								<div class="col-md-2 no-padding">
+									<div class="input-group">
+										<input type="number" min="0" class="form-control sizes" id="xl" placeholder="XL">
+									  <span class="input-group-btn no-padding">
+											<button id="addGarment" type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="row">
+							<div class="col-md-4">Color</div>
+							<div class="col-md-2">Tally</div>
+							<div class="col-md-1">XS</div>
+							<div class="col-md-1">S</div>
+							<div class="col-md-1">M</div>
+							<div class="col-md-1">L</div>
+							<div class="col-md-2">XL</div>
+						</div>
+						<div class="row">
+							<div id="displayList"></div>
+							<span class="totalTally"></span>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		<div class="alert alert-info hide">
+			<span id="alert"></span>
+			<button type="button" class="hideAlert close" aria-hidden="true">×</button>
+		</div>
+		<p>2 <button class="btn btn-info finish">Finish Step</button></p>
+		</div>
+	</div>
+	</div>
+</div>

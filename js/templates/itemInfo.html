@@ -1,0 +1,63 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <% if(locations.length > 0) { %>
+      <%= locations.length %> Print Location<%=(locations.length>1)?"s":"" %>
+      <hr>
+      <ul class="list-group">
+        <% locations.each(function(location){ %>
+          <li class="list-group-item">
+            <div class="row">
+              <%  var position=location.get("position"),design=location.get("design"),later=location.get("later"),art=location.get("artworks"); %>
+              <div class="col-md-3"><%= position %></div>
+              <% if(art.length>0){ %>
+                <div class="col-md-1">
+                  <span class="badge"><%= art.length %></span>
+                </div>
+                <div class="col-md-5">
+                  file<%=(art.length>1)?"s":"" %> provided
+                </div>
+              <% } else { %>
+                <div class="col-md-3">
+                  <% if(design){ %>Graphic Design Services Requested<% } %>
+                  <% if(later){ %>Artwork will be provided later<% } %>
+                </div>
+              <% } %>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= colors.totalTally %> total items(<%= product.get("type") %>)</div>
+      <!--div class="panel-body">
+        <p></p>
+      </div-->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Color</th> <th>Tally</th> <th>XS</th> <th>S</th> <th>M</th> <th>L</th> <th>XL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% colors.each(function(color){ %>
+            <tr>
+              <td><%= color.get("color") %></td>
+              <td><%= color.get("tally") %></td>
+              <% _.each(color.get("sizes"),function(size,i){ %>
+                <td><span class="badge"><%= size %></span></td>
+              <% }); %>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+
+  </div>
+</div>

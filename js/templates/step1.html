@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-1 col-md-5">
+    <div class="jumbotron"><h3>Choose the Product</h3><hr/><h3><small> That you would like customized</small></h3></div>
+  </div>
+  <div class="col-sm-1 col-md-7">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="productSelect" class="col-sm-2 control-label sr-only">Product</label>
+        <div class="col-sm-10">
+          <select id="productSelect" class="select" data-style="btn-primary" data-width="80%" data-container="body" data-size="false" data-header="">
+            <option>Select me</option>
+            <% $.each(products, function(index,product){ %>
+              <option> <%=product %> </option>
+            <% });%>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="brandInput" class="col-sm-2 control-label sr-only">Brand</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="brand" name="brand" placeholder="Specific Brand">
+        </div>
+        <label for="styleInput" class="col-sm-2 control-label sr-only">Style # / Material</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="style" name="style" placeholder="Style # / Material">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" style="display: none" class="btn btn-default finish">Next Step</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

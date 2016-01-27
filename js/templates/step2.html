@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-sm-1 col-md-5">
+    <div class="jumbotron"><h3>Print Location</h3></div>
+    <div id="locationsList"></div>
+  </div>
+  <div class="col-sm-1 col-md-7">
+    <div class="row">
+      <div class="col-md-6">
+        <select id="location" class="select" data-style="btn-primary" data-width="80%" data-container="body" data-size="false" data-header="">
+          <option>Choose A Location</option>
+          <% $.each(labels, function(index,label){ %>
+            <option><%=label %></option>
+          <% }); %>
+          <option>Other</option>
+          <option>I don't know</option>
+        </select>
+      </div>
+      <div class="col-md-6" style="display: none">
+        <select id="inkColors" class="select" data-style="btn-primary" data-width="80%" data-container="body" data-size="false" data-header="">
+          <option>Ink Colors</option>
+          <% $.each(inkColors, function(num,val){ %>
+            <option><%=val %></option>
+          <% }); %>
+          <option>I don't know</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row" id="uiPanel">
+      <div class="col-md-4" id="hasArt" style="display: none">
+        <h6>Do You Have Artwork?</h6>
+        <div class="row">
+          <div class="col-md-1">No</div>
+          <div class="col-md-7">
+            <input id='artSwitch' type="checkbox" class="js-switch" />
+          </div>
+          <div class="col-md-1">Yes</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="upload" style="display: none">
+        <a class="btn btn-primary" href="#uploadManager" data-modal>Upload Your Artwork</a>
+      </div>
+    </div>
+    <div style="position:relative;height:100%;width:100%;">
+      <div id="uploadManager" style="overflow-y:auto" class="jqmodal">
+        <a href="#" id="jqmodalClose" rel="jqmodal:close">Not Ready to Upload</a>
+        <button class="btn btn-primary" style="display: none" id="finUp">Finished Uploading</button>
+        <hr>
+        <input id="Fileinput" name="Fileinput" type="file" class="file-loading" multiple>
+      </div>
+    </div>
+    <div id="noArt" style="display: none">
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary" id="graphicDesign">Click here to add graphic design services to your quote</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary" id="supplyLater">Click here to supply artwork at a later date</button>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="opts" style="display: none">
+      <div class="col-md-6">
+        <button class="btn btn-primary" id="done">Done Adding Locations</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-primary" id="add">Add Another Location</button>
+      </div>
+    </div>
+  </div>
+</div>

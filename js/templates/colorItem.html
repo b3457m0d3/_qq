@@ -1,0 +1,21 @@
+<li class="list-group-item">
+	<div class="row">
+		<div class="col-md-4">
+			<%=color %>
+		</div>
+		<div class="col-md-2">
+			<span class='badge total'><%= tally %></span>
+		</div>
+		<% $.each( sizes, function( index, val ){ %>
+			<div class="col-md-1">
+			<% if (!isNaN(val)){ %>
+				<% if(val>0){  %>
+			    <span class='badge size'><%= val %></span>
+				<% } else { %>
+				  <span class='size-label'></span><span class='size'></span>
+		  	<% } %>
+		  <% } %>
+		  </div>
+		<% }); %>
+	</div>
+</li>
